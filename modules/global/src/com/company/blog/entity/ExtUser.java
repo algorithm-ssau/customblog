@@ -21,12 +21,10 @@ import com.haulmont.cuba.security.entity.User;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Table;
 
-@Table(name = "BLOG_NEW_ENTITY")
-@Entity(name = "blog_NewEntity")
+@Entity(name = "blog_ExtUser")
 @Extends(User.class)
-public class NewEntity extends User {
+public class ExtUser extends User {
 
     private static final long serialVersionUID = -5371509754789875772L;
 
