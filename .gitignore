@@ -27,3 +27,8 @@ hs_err_pid*
 *build*
 /build/
 /build
+.idea/
+.idl/
+.gradle/
+.idea*
+/idea/
