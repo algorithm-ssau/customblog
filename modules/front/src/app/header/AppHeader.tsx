@@ -25,13 +25,18 @@ class AppHeader extends React.Component<
         </div>
         <div className="user-panel">
           <LanguageSwitcher className="panelelement language-switcher -header" />
-          <span className="panelelement">{appState.userName}</span>
+          <Button className="panelelement"
+          onClick={(appState.usingAnonymously)? this.showLoginConfirm : this.showLogoutConfirm}
+          type="link"
+          ghost={true}>
+          {(appState.usingAnonymously)? this.props.intl.formatMessage({ id: "login.loginBtn"}) : appState.userName}
+          </Button>
           <Button
             className="panelelement"
             ghost={true}
             icon="logout"
             style={{ border: 0 }}
-            onClick={this.showLogoutConfirm}
+            onClick={(appState.usingAnonymously)? this.showLoginConfirm : this.showLogoutConfirm}
           />
         </div>
       </div>
@@ -42,6 +47,18 @@ class AppHeader extends React.Component<
     Modal.confirm({
       title: this.props.intl.formatMessage({ id: "header.logout.areYouSure" }),
       okText: this.props.intl.formatMessage({ id: "header.logout.ok" }),
+      cancelText: this.props.intl.formatMessage({ id: "header.logout.cancel" }),
+      onOk: () => {
+        this.props.mainStore!.logout();
+      }
+    });
+  };
+
+
+ showLoginConfirm = () => {
+    Modal.confirm({
+      title: 'Желаете войти в аккаунт?',
+      okText: this.props.intl.formatMessage({ id: "login.loginBtn"}),
       cancelText: this.props.intl.formatMessage({ id: "header.logout.cancel" }),
       onOk: () => {
         this.props.mainStore!.logout();
