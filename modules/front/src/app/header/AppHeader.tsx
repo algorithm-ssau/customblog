@@ -26,14 +26,14 @@ class AppHeader extends React.Component<
         <div className="user-panel">
           <LanguageSwitcher className="panelelement language-switcher -header" />
           <span className="panelelement">
-          {appState.userName}
+          {(appState.loginRequired) ? "Anonymous" : appState.userName}
           </span>
           <Button
             className="panelelement"
             ghost={true}
             icon="logout"
             style={{ border: 0 }}
-            onClick={(appState.usingAnonymously)? this.showLoginConfirm : this.showLogoutConfirm}
+            onClick={(appState.loginRequired)? this.showLoginConfirm : this.showLogoutConfirm}
           />
         </div>
       </div>
@@ -43,7 +43,7 @@ class AppHeader extends React.Component<
   showLogoutConfirm = () => {
     Modal.confirm({
       title: this.props.intl.formatMessage({ id: "header.logout.areYouSure" }),
-      okText: this.props.intl.formatMessage({ id: "header.logout.ok" }),
+      okText: this.props.intl.formatMessage({ id: "header.logout.ok" }),           //модаль подтверждения выхода
       cancelText: this.props.intl.formatMessage({ id: "header.logout.cancel" }),
       onOk: () => {
         this.props.mainStore!.logout();
@@ -51,12 +51,11 @@ class AppHeader extends React.Component<
     });
   };
 
-
  showLoginConfirm = () => {
     Modal.confirm({
       title: 'Желаете пройти авторизацию?',
       okText: this.props.intl.formatMessage({ id: "login.loginBtn"}),
-      cancelText: this.props.intl.formatMessage({ id: "header.logout.cancel" }),
+      cancelText: this.props.intl.formatMessage({ id: "header.logout.cancel" }),   //модаль подтверждения авторизации
       onOk: () => {
         this.props.mainStore!.logout();
       }
