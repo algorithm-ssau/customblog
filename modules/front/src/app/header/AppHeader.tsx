@@ -25,12 +25,9 @@ class AppHeader extends React.Component<
         </div>
         <div className="user-panel">
           <LanguageSwitcher className="panelelement language-switcher -header" />
-          <Button className="panelelement"
-          onClick={(appState.usingAnonymously)? this.showLoginConfirm : this.showLogoutConfirm}
-          type="link"
-          ghost={true}>
-          {(appState.usingAnonymously)? this.props.intl.formatMessage({ id: "login.loginBtn"}) : appState.userName}
-          </Button>
+          <span className="panelelement">
+          {appState.userName}
+          </span>
           <Button
             className="panelelement"
             ghost={true}
@@ -57,7 +54,7 @@ class AppHeader extends React.Component<
 
  showLoginConfirm = () => {
     Modal.confirm({
-      title: 'Желаете войти в аккаунт?',
+      title: 'Желаете пройти авторизацию?',
       okText: this.props.intl.formatMessage({ id: "login.loginBtn"}),
       cancelText: this.props.intl.formatMessage({ id: "header.logout.cancel" }),
       onOk: () => {
