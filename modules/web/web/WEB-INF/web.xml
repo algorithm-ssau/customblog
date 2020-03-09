@@ -8,7 +8,7 @@
     <context-param>
         <param-name>appPropertiesConfig</param-name>
         <param-value>
-            classpath:com/company/blog/web-app.properties
+            classpath:com/pde/blog/web-app.properties
             /WEB-INF/local.app.properties
             "file:${catalina.base}/conf/app/local.app.properties"
         </param-value>
@@ -16,7 +16,7 @@
     <!--Application components-->
     <context-param>
         <param-name>appComponents</param-name>
-        <param-value>com.haulmont.cuba com.haulmont.addon.restapi</param-value>
+        <param-value>com.haulmont.cuba com.haulmont.addon.restapi com.haulmont.fts</param-value>
     </context-param>
     <listener>
         <listener-class>com.vaadin.server.communication.JSR356WebsocketInitializer</listener-class>

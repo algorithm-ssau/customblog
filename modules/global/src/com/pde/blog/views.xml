@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+    <!-- Full views -->
+    <view class="com.pde.blog.entity.Author" name="author-full" extends="_local">
+        <property name="user" view="_local"/>
+    </view>
+    <view class="com.pde.blog.entity.Publication" name="publication-full" extends="_local">
+        <property name="author" view="_local"/>
+        <property name="category" view="_local"/>
+        <property name="tags" view="_local"/>
+        <property name="rates" view="_local"/>
+    </view>
+    <view class="com.pde.blog.entity.Comment" name="comment-full" extends="_local">
+        <property name="author" view="_local"/>
+        <property name="rates" view="_local"/>
+        <property name="parent" view="_local"/>
+        <property name="publication" view="_local"/>
+    </view>
+    <view class="com.pde.blog.entity.Rate" name="rate-full" extends="_local">
+        <property name="author" view="_local"/>
+    </view>
+
+    <!-- Edit views -->
+    <view class="com.pde.blog.entity.Author" name="author-edit" extends="_local">
+        <property name="user" view="_minimal"/>
+    </view>
+    <view class="com.pde.blog.entity.Publication" name="publication-edit" extends="_local">
+        <property name="author" view="_minimal"/>
+        <property name="category" view="_minimal"/>
+        <property name="tags" view="_minimal"/>
+    </view>
+    <view class="com.pde.blog.entity.Comment" name="comment-edit" extends="_local">
+        <property name="author" view="_minimal"/>
+        <property name="parent" view="_minimal"/>
+        <property name="publication" view="_minimal"/>
+    </view>
+    <view class="com.pde.blog.entity.Rate" name="rate-edit" extends="_local">
+        <property name="author" view="_minimal"/>
+    </view>
+
+    <!-- Browse views -->
+    <view class="com.pde.blog.entity.Author" name="author-browse" extends="_local">
+        <property name="user" view="_local"/>
+    </view>
+    <view class="com.pde.blog.entity.Publication" name="publication-browse" extends="_local">
+        <property name="author" view="_local"/>
+        <property name="category" view="_local"/>
+        <property name="tags" view="_local"/>
+        <property name="rates" view="_local"/>
+    </view>
+    <view class="com.pde.blog.entity.Comment" name="comment-browse" extends="_local">
+        <property name="author" view="_local"/>
+        <property name="parent" view="_local"/>
+        <property name="publication" view="_local"/>
+        <property name="rates" view="_local"/>
+        <property name="rating"/>
+    </view>
+    <view class="com.pde.blog.entity.Rate" name="rate-browse" extends="_local">
+        <property name="author" view="_local"/>
+    </view>
+    <view class="com.pde.blog.entity.ExtUser" name="user.edit" extends="user.edit" overwrite="true">
+        <property name="avatarUrl"/>
+        <property name="banned"/>
+    </view>
+
+    <!-- REST export views -->
+
+    <view class="com.pde.blog.entity.Author" name="author-rest-full" extends="_local">
+        <property name="user" view="_minimal">
+            <property name="name"/>
+            <property name="language"/>
+            <property name="avatarUrl"/>
+            <property name="banned"/>
+            <property name="active"/>
+        </property>
+    </view>
+    <view class="com.pde.blog.entity.Publication" name="publication-rest-preview" extends="_minimal">
+        <property name="author" view="_local">
+            <property name="user">
+                <property name="avatarUrl"/>
+                <property name="banned"/>
+            </property>
+        </property>
+        <property name="category" view="_local"/>
+        <property name="tags" view="_local"/>
+        <property name="rating"/>
+        <property name="rates" view="_minimal"/>
+    </view>
+    <view class="com.pde.blog.entity.Publication" name="publication-rest-full" extends="_local">
+        <property name="author" view="author-rest-full">
+            <property name="user" view="_minimal">
+                <property name="avatarUrl"/>
+                <property name="banned"/>
+                <property name="name"/>
+                <property name="firstName"/>
+                <property name="lastName"/>
+                <property name="language"/>
+            </property>
+        </property>
+        <property name="category" view="_local"/>
+        <property name="tags" view="_local"/>
+        <property name="rating"/>
+        <property name="rates" view="_local">
+            <property name="author" view="_minimal"/>
+        </property>
+    </view>
+</views>

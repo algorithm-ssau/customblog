@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
+    <menu id="application-blog" insertBefore="administration">
+        <item screen="blog_Publication.browse"/>
+    </menu>
+    <menu id="blog-settings" insertBefore="administration">
+        <item screen="blog_Tag.browse"/>
+        <item screen="blog_Category.browse"/>
+        <item screen="blog_Author.browse"/>
+    </menu>
+</menu-config>
