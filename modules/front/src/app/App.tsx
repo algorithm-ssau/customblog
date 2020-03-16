@@ -48,7 +48,7 @@ class AppComponent extends React.Component<
 
     return (
       <Layout className="main-layout">
-        <Layout.Header>
+        <Layout.Header style={{background:"#323232"}}>
           <AppHeader />
         </Layout.Header>
         <Layout>
@@ -70,8 +70,8 @@ class AppComponent extends React.Component<
               )}
             </Menu>
           </Layout.Sider>
-          <Layout style={{ padding: "24px 24px 24px" }}>
-            <Layout.Content>
+          <Layout style={{ padding: "24px 24px 24px", background: "#f2f2f2"}}>
+            <Layout.Content >
               <Switch>
                 <Route exact={true} path="/" component={HomePage} />
                 {collectRouteItems(menuItems).map(route => (
