@@ -1,7 +1,7 @@
 import * as React from "react";
 import "./App.css";
 
-import { Icon, Layout, Menu } from "antd";
+import { Icon, Layout, Menu, Card } from "antd";
 import { observer } from "mobx-react";
 import Login from "./login/Login";
 import Centered from "./common/Centered";
@@ -22,6 +22,8 @@ import {
   IntlFormatters,
   WrappedComponentProps
 } from "react-intl";
+import { PrevCard } from "./card/PrevCard";
+
 
 @injectMainStore
 @observer
@@ -42,7 +44,12 @@ class AppComponent extends React.Component<
         </Centered>
       );
     }
-    const menuIdx = 1;
+    const menuIdx = 1;    
+    const test: Array<PreviewCard> = [
+      {title: "title1", complete: true},
+      {title: "title2", complete: true},
+      {title: "title3", complete: true}
+    ];
 
     return (
       <Layout className="main-layout">
@@ -70,6 +77,14 @@ class AppComponent extends React.Component<
           </Layout.Sider>
           <Layout style={{ padding: "24px 24px 24px", background: "#f2f2f2"}}>
             <Layout.Content >
+
+              <React.Fragment>
+                <PrevCard card ={test[0]} />
+                <PrevCard card ={test[1]} />
+                <PrevCard card ={test[2]} />
+              </React.Fragment>
+
+
               <Switch>
                 <Route exact={true} path="/" component={HomePage} />
                 {collectRouteItems(menuItems).map(route => (
@@ -80,6 +95,7 @@ class AppComponent extends React.Component<
                   />
                 ))}
               </Switch>
+              
             </Layout.Content>
           </Layout>
         </Layout>
