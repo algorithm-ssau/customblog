@@ -46,9 +46,12 @@ class AppComponent extends React.Component<
     }
     const menuIdx = 1;    
     const test: Array<PreviewCard> = [
-      {title: "title1", complete: true},
-      {title: "title2", complete: true},
-      {title: "title3", complete: true}
+      {
+        title: "Short test title", 
+        author: "Wauxt", 
+        date: "dec 13, 2019", 
+        avatarSrc: "https://steamuserimages-a.akamaihd.net/ugc/872998386575050985/84BC2665965A3FF9F2E478C10A000B8DCFED22C6/"
+      }
     ];
 
     return (
@@ -75,15 +78,15 @@ class AppComponent extends React.Component<
               )}
             </Menu>
           </Layout.Sider>
-          <Layout style={{ padding: "24px 24px 24px", background: "#f2f2f2"}}>
+          <Layout style={{ padding: "16px 16px 16px", background: "#f2f2f2"}}>
             <Layout.Content >
 
               <React.Fragment>
-                <PrevCard card ={test[0]} />
-                <PrevCard card ={test[1]} />
-                <PrevCard card ={test[2]} />
+                <PrevCard card ={test[0]} />                
               </React.Fragment>
 
+              <br />
+              <br />
 
               <Switch>
                 <Route exact={true} path="/" component={HomePage} />

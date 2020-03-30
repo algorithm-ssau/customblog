@@ -1,4 +1,6 @@
 type PreviewCard = {
     title: string;
-    complete: boolean;
+    author: string;
+    date: string;
+    avatarSrc: string;  
 };
