@@ -1,8 +1,10 @@
 .mainDiv {
     width: 100%;
-    height: 120px;    
+    min-height: 120px; 
     background-color: white;
     padding: 10px;
+    margin-bottom: 16px;
+    overflow-y: auto;
 }
 .cardTitle {
     font: Arial;
@@ -10,8 +12,9 @@
     font-style: bold;
     color: #202020;
     float: left;
-    vertical-align: top;        
-  }
+    vertical-align: top;
+    width: 50%;       
+}
 
 .cardRightSide {
     float: right;
