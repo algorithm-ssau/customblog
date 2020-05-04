@@ -45,27 +45,6 @@ class AppComponent extends React.Component<
       );
     }
     const menuIdx = 1;    
-    const test: Array<PreviewCard> = [
-      {
-        title: "Short test title", 
-        author: "Wauxt", 
-        date: "jan 17, 2020", 
-        avatarSrc: "https://steamuserimages-a.akamaihd.net/ugc/872998386575050985/84BC2665965A3FF9F2E478C10A000B8DCFED22C6/"
-      },
-      {
-        title: "Title that contains a little bit more words, nothing special.", 
-        author: "Riley Spencer", 
-        date: "mar 21, 2020", 
-        avatarSrc: "https://cdn130.picsart.com/308821051047201.jpg?type=webp&to=crop&r=256"
-      },
-      {
-        title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", 
-        author: "Jeremy Kelly", 
-        date: "mar 30, 2020", 
-        avatarSrc: "https://s3.amazonaws.com/media.muckrack.com/profile/images/99294/jeremy-kelly.jpeg.256x256_q100_crop-smart.jpg"
-      }
-    ];
-
     return (
       <Layout className="main-layout">
         <Layout.Header style={{background:"#323232"}}>
@@ -92,16 +71,6 @@ class AppComponent extends React.Component<
           </Layout.Sider>
           <Layout style={{ padding: "16px 16px 16px", background: "#f2f2f2"}}>
             <Layout.Content >
-
-              <React.Fragment>
-                <PrevCard card ={test[0]} />    
-                <PrevCard card ={test[1]} />
-                <PrevCard card ={test[2]} />            
-              </React.Fragment>
-
-              <br />
-              <br />
-
               <Switch>
                 <Route exact={true} path="/" component={HomePage} />
                 {collectRouteItems(menuItems).map(route => (
