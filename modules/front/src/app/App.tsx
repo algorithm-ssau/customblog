@@ -35,7 +35,6 @@ class AppComponent extends React.Component<
     if (!initialized || !locale) {
       return <CenteredLoader />;
     }
-
     if (loginRequired) {
       return (
         <Centered>
@@ -43,7 +42,6 @@ class AppComponent extends React.Component<
         </Centered>
       );
     }
-
     const menuIdx = 1;
 
     return (
