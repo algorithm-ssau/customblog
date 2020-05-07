@@ -23,9 +23,9 @@ import com.haulmont.cuba.core.global.UserSessionSource;
 import com.haulmont.cuba.security.entity.User;
 import com.pde.blog.entity.Author;
 import com.pde.blog.entity.Publication;
-import jdk.internal.jline.internal.Nullable;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Nullable;
 import javax.inject.Inject;
 import java.util.List;
 
@@ -75,7 +75,6 @@ public class AuthorServiceBean implements AuthorService {
 
     }
 
-    @Nullable
     @Override
     public Boolean isBanned(Author author) {
         Preconditions.checkNotNullArgument(author);
@@ -84,7 +83,7 @@ public class AuthorServiceBean implements AuthorService {
                 "from blog_Author a " +
                 "where a = :author", Boolean.class)
                 .parameter("author", author)
-                .optional().orElse(null);
+                .optional().orElse(false);
     }
 
     @Nullable

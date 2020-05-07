@@ -34,7 +34,7 @@ public class Rate extends StandardEntity {
     private User author;
 
     @Column(name = "VALUE")
-    private Double value;
+    private Double value = 0d;
 
     public User getAuthor() {
         return author;

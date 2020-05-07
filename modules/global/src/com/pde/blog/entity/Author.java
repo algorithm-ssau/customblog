@@ -40,7 +40,7 @@ public class Author extends StandardEntity {
     private String visibleName;
 
     @Column(name = "ACTIVE")
-    private Boolean active;
+    private Boolean active = true;
 
     @Column(name = "BANNED")
     private Boolean banned = false;

@@ -94,7 +94,6 @@
                 <property name="name"/>
                 <property name="firstName"/>
                 <property name="lastName"/>
-                <property name="language"/>
             </property>
         </property>
         <property name="category" view="_local"/>

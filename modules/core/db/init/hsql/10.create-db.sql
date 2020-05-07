@@ -69,6 +69,7 @@ create table BLOG_PUBLICATION (
     RELEASE_DATE timestamp not null,
     CATEGORY_ID varchar(36),
     VISIBLE boolean,
+    AUTHOR_ID varchar(36),
     --
     primary key (ID)
 )^

@@ -54,11 +54,10 @@ public class Comment extends StandardEntity {
     public Double getRating() {
         if (rates == null || rates.isEmpty()) return 0d;
 
-        Double sum = 0d;
-        for (Rate rate : rates) {
-            sum += rate.getValue();
-        }
-        return sum;
+        return rates.stream()
+                .map(Rate::getValue)
+                .reduce(Double::sum)
+                .orElse(0d);
     }
 
     public Publication getPublication() {

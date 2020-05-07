@@ -32,7 +32,7 @@ public class ExtUser extends User {
     private String avatarUrl;
 
     @Column(name = "BANNED")
-    private Boolean banned;
+    private Boolean banned = false;
 
     public String getAvatarUrl() {
         return avatarUrl;

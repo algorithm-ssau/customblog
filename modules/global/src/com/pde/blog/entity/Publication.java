@@ -64,7 +64,7 @@ public class Publication extends StandardEntity {
     private Set<Rate> rates = new HashSet<>();
 
     @Column(name = "VISIBLE")
-    private Boolean visible;
+    private Boolean visible = false;
 
     @JoinColumn(name = "AUTHOR_ID")
     @ManyToOne(fetch = FetchType.LAZY)
@@ -74,11 +74,10 @@ public class Publication extends StandardEntity {
     public Double getRating() {
         if (rates == null || rates.isEmpty()) return 0d;
 
-        Double sum = 0d;
-        for (Rate rate : rates) {
-            sum += rate.getValue();
-        }
-        return sum;
+        return rates.stream()
+                .map(Rate::getValue)
+                .reduce(Double::sum)
+                .orElse(0d);
     }
 
     public String getTitle() {

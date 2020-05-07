@@ -21,9 +21,9 @@ import com.haulmont.cuba.core.global.DataManager;
 import com.haulmont.cuba.core.global.TimeSource;
 import com.pde.blog.entity.Category;
 import com.pde.blog.entity.Publication;
-import jdk.internal.jline.internal.Nullable;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Nullable;
 import javax.inject.Inject;
 import java.util.List;
 import java.util.UUID;

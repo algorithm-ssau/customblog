@@ -37,7 +37,7 @@ public class Category extends StandardEntity {
     private String description;
 
     @Column(name = "ACTIVE")
-    private Boolean active;
+    private Boolean active = true;
 
     public String getName() {
         return name;

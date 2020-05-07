@@ -19,17 +19,42 @@ package com.pde.blog.service;
 import com.pde.blog.entity.Category;
 import com.pde.blog.entity.Publication;
 
+import javax.annotation.Nullable;
 import java.util.List;
 
 public interface PublicationsService {
 
     String NAME = "blog_PublicationsService";
 
+    /**
+     * Get publication by id (serialized UUID)
+     *
+     * @param serializedUuid
+     * @return publication if have
+     */
+    @Nullable
     Publication getPublicationById(String serializedUuid);
 
+    /**
+     * Get all categories.
+     *
+     * @return list of categories
+     */
     List<Category> getCategories();
 
+    /**
+     * Get all publication in category.
+     *
+     * @param category
+     * @return list of publications
+     */
     List<Publication> getCategoryPublications(Category category);
 
+    /**
+     * Get all publication by category name.
+     *
+     * @param categoryName
+     * @return list of publications
+     */
     List<Publication> getCategoryNamePublications(String categoryName);
 }
