@@ -5,8 +5,9 @@ class AuthorProfile {
 render(){
     return (
     <div className = "mainDiv">
-            <div className = "rName">
-                <a style={{color: "#202020"}}><b>AuthorName</b></a>
+            <div className = "Name">
+                <a style={{color: "#202020"}}><b>VisibleName(ник)</b></a>
+                <a style={{color: "#202020"}}><b>AuthorName(ФИО)</b></a>
             </div>
             <div className = "About">
             <p>AuthorAbout</p>
