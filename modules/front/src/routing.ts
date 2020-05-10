@@ -1,3 +1,4 @@
+import { AuthorProfile } from "./app/AuthorProfile/AuthorProfile";
 import { getMenuItems } from "@cuba-platform/react";
 
 export const menuItems = getMenuItems();
@@ -20,3 +21,11 @@ const userSettingsSubMenu = {
 // Add sub menu item to menu config
 menuItems.push(userSettingsSubMenu);
 */
+
+menuItems.push({
+  pathPattern: "/authorProfile",
+  menuLink: "/authorProfile",
+  component: AuthorProfile,
+  caption: "AuthorProfile"
+  //PoboroznyukPavel: this is probably only for testing the AuthorProfile layout
+});

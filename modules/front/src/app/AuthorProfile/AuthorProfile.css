@@ -1,43 +1,44 @@
-.mainDiv {
-    width: 100%;
-    min-height: 120px;
-    background-color: white;
-    padding: 10px;
-    margin-bottom: 16px;
-    overflow-y: auto;
+table, td, th{
+  border: 0px;
+  width: 100%;
 }
-.Name {
+
+.FullName {
+    font: Arial;
+    font-size: 20px;
+    color: #505050;
+    float: left;
+}
+
+.Nick {
     font: Arial;
     font-size: 33px;
     font-style: bold;
-    color: #202020;
     float: left;
-    vertical-align: top;
-    width: 50%;
-}
-
-.cardRightSide {
-    float: right;
-    padding: 20px;
-}
-
-.Status {
-    font: times;
-    font-size: 30px;
-    color: black;
-    text-align: right;
-    display: inline-block;
-    margin-right: 20px;
 }
 
 .Avatar{
-    width: 70px;
-    height: 70px;
-    vertical-align: center;
-    float: right;
+    width: 100px;
+    height: 150px;
     alt: "avatar";
 }
 
-.About{
-  font-size: 30px;
+.offline{
+    color: gray;
+    font-size: 12px;
+}
+
+.online{
+    color: green;
+    font-size: 12px;
+}
+
+.banned{
+    color: red;
+    font-size: 15px;
+}
+
+.active{
+    color:green;
+    font-size: 12px;
 }
