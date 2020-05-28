@@ -28,6 +28,8 @@
         <property name="author" view="_minimal"/>
         <property name="category" view="_minimal"/>
         <property name="tags" view="_minimal"/>
+        <property name="rates"/>
+        <property name="rating"/>
     </view>
     <view class="com.pde.blog.entity.Comment" name="comment-edit" extends="_local">
         <property name="author" view="_minimal"/>
@@ -47,6 +49,7 @@
         <property name="category" view="_local"/>
         <property name="tags" view="_local"/>
         <property name="rates" view="_local"/>
+        <property name="rating"/>
     </view>
     <view class="com.pde.blog.entity.Comment" name="comment-browse" extends="_local">
         <property name="author" view="_local"/>

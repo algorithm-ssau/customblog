@@ -32,3 +32,5 @@ hs_err_pid*
 .idl/
 .idea*
 /idea/
+.gradle/
+.idea
