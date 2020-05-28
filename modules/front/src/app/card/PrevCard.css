@@ -1,0 +1,44 @@
+.mainDiv {
+    width: 100%;
+    min-height: 120px; 
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 16px;
+    overflow-y: auto;
+}
+.cardTitle {
+    font: Arial;
+    font-size: 33px;
+    font-style: bold;
+    color: #202020;
+    float: left;
+    vertical-align: top;
+    width: 50%;       
+}
+
+.cardRightSide {
+    float: right;
+    padding: 20px;    
+}
+
+.cardAuthorThing {
+    font: times;
+    font-size: 30px;
+    color: black;    
+    text-align: right;    
+    display: inline-block;
+    margin-right: 20px;  
+}
+
+.cardAvatar{
+    width: 70px;
+    height: 70px;
+    vertical-align: center;
+    float: right;
+    alt: "avatar";    
+}
+
+.cardDate {    
+    font-size: 18px;
+}
+

@@ -1,7 +1,7 @@
 import * as React from "react";
 import "./App.css";
 
-import { Icon, Layout, Menu } from "antd";
+import { Icon, Layout, Menu, Card } from "antd";
 import { observer } from "mobx-react";
 import Login from "./login/Login";
 import Centered from "./common/Centered";
@@ -22,6 +22,8 @@ import {
   IntlFormatters,
   WrappedComponentProps
 } from "react-intl";
+import { PrevCard } from "./card/PrevCard";
+
 
 @injectMainStore
 @observer
@@ -42,8 +44,7 @@ class AppComponent extends React.Component<
         </Centered>
       );
     }
-    const menuIdx = 1;
-
+    const menuIdx = 1;    
     return (
       <Layout className="main-layout">
         <Layout.Header style={{background:"#323232"}}>
@@ -68,7 +69,7 @@ class AppComponent extends React.Component<
               )}
             </Menu>
           </Layout.Sider>
-          <Layout style={{ padding: "24px 24px 24px", background: "#f2f2f2"}}>
+          <Layout style={{ padding: "16px 16px 16px", background: "#f2f2f2"}}>
             <Layout.Content >
               <Switch>
                 <Route exact={true} path="/" component={HomePage} />
@@ -80,6 +81,7 @@ class AppComponent extends React.Component<
                   />
                 ))}
               </Switch>
+              
             </Layout.Content>
           </Layout>
         </Layout>

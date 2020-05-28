@@ -19,6 +19,7 @@ class AppHeader extends React.Component<
       <div className="app-header">
         <div>
           <img
+            className="size-correction"          
             src={logo}
             alt={this.props.intl.formatMessage({ id: "common.alt.logo" })}
           />
