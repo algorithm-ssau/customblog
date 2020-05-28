@@ -1,0 +1,44 @@
+table, td, th{
+  border: 0px;
+  width: 100%;
+}
+
+.FullName {
+    font: Arial;
+    font-size: 20px;
+    color: #505050;
+    float: left;
+}
+
+.Nick {
+    font: Arial;
+    font-size: 33px;
+    font-style: bold;
+    float: left;
+}
+
+.Avatar{
+    width: 100px;
+    height: 150px;
+    alt: "avatar";
+}
+
+.offline{
+    color: gray;
+    font-size: 12px;
+}
+
+.online{
+    color: green;
+    font-size: 12px;
+}
+
+.banned{
+    color: red;
+    font-size: 15px;
+}
+
+.active{
+    color:green;
+    font-size: 12px;
+}
