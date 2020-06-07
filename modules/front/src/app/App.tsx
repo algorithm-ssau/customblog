@@ -22,8 +22,7 @@ import {
   IntlFormatters,
   WrappedComponentProps
 } from "react-intl";
-import { PrevCard } from "./card/PrevCard";
-
+import PrevCardStore from "./cardStore/CardStore"
 
 @injectMainStore
 @observer
@@ -71,6 +70,9 @@ class AppComponent extends React.Component<
           </Layout.Sider>
           <Layout style={{ padding: "16px 16px 16px", background: "#f2f2f2"}}>
             <Layout.Content >
+
+              <PrevCardStore/>
+
               <Switch>
                 <Route exact={true} path="/" component={HomePage} />
                 {collectRouteItems(menuItems).map(route => (
