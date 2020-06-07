@@ -73,7 +73,7 @@ public class PublicationsServiceBean implements PublicationsService {
         List<Publication> publications = dataManager.load(Publication.class)
                 .query("select p " +
                         "from blog_Publication p " +
-                        "where p.releaseDate >= :currentTime " +
+                        "where p.releaseDate <= :currentTime " +
                         "   and p.category = :category " +
                         "   and p.visible = true " +
                         "   and p.author.banned = false")
@@ -92,7 +92,7 @@ public class PublicationsServiceBean implements PublicationsService {
         List<Publication> publications = dataManager.load(Publication.class)
                 .query("select p " +
                         "from blog_Publication p " +
-                        "where p.releaseDate >= :currentTime " +
+                        "where p.releaseDate <= :currentTime " +
                         "   and p.category.name = :categoryName " +
                         "   and p.visible = true " +
                         "   and p.author.banned = false")

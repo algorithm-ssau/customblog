@@ -25,17 +25,22 @@
             <DependencyModelState>
               <option name="group" value="com.haulmont.cuba" />
               <option name="name" value="cuba-global" />
-              <option name="version" value="7.1.4" />
+              <option name="version" value="7.1.5" />
             </DependencyModelState>
             <DependencyModelState>
               <option name="group" value="com.haulmont.addon.restapi" />
               <option name="name" value="restapi-global" />
               <option name="version" value="7.1.1" />
             </DependencyModelState>
+            <DependencyModelState>
+              <option name="group" value="com.haulmont.fts" />
+              <option name="name" value="fts-global" />
+              <option name="version" value="7.1.5" />
+            </DependencyModelState>
           </list>
         </option>
-        <option name="artifactGroup" value="com.company.blog" />
-        <option name="artifactVersion" value="0.1" />
+        <option name="artifactGroup" value="com.pde.blog" />
+        <option name="artifactVersion" value="0.2" />
         <option name="artifactSnapshot" value="true" />
         <option name="tomcatDir" value="$PROJECT_DIR$/deploy/tomcat" />
         <option name="gradleVersion" value="4.10.3" />
@@ -48,7 +53,7 @@
     <option name="dbArtifacts">
       <map>
         <entry key="com.haulmont.addon.restapi" value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.haulmont.addon.restapi/restapi-core/7.1.1/42162443d6f9537d274759af26b9b246b574a599/restapi-core-7.1.1-db.zip" />
-        <entry key="com.haulmont.cuba" value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.haulmont.cuba/cuba-core/7.1.4/741cb81fb0762aec1fbb335a1f58f2fcadaef7fa/cuba-core-7.1.4-db.zip" />
+        <entry key="com.haulmont.cuba" value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.haulmont.cuba/cuba-core/7.1.5/d08451cb3fd5760852aed167506396d9454a0744/cuba-core-7.1.5-db.zip" />
       </map>
     </option>
   </component>
