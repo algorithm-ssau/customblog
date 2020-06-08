@@ -5,6 +5,7 @@ import { User } from "../../cuba/entities/base/sec$User";
 
 
 
+
 const test: Array<PreviewCard> = [
   {
       title: "Short test title", 
@@ -33,22 +34,23 @@ interface PublicationJSON{
   _entityName: string;
   _instanceName: string;
   id: string;
-  version: number;
-  content: string;
+  releaseDate: string;
   author: AuthorJSON;
   rates: Array<{}>;
   rating: number;
   title: string;
+  version: number;
+  content: string;  
   tags: Array<{}>;
-  category: CategoryJSON;
+  category: CategoryJSON;  
 }
 interface AuthorJSON{
   _entityName: string;
   _instanceName: string;
   id: string;
   about: string;
-  version: number;
   active: boolean;
+  version: number;  
   visibleName: string;
   banned: boolean;
   user: UserJSON;
@@ -57,9 +59,10 @@ interface UserJSON{
   _entityName: string;
   _instanceName: string;
   id: string;
-  version: number;
+  login: string;  
   avatarUrl: string;
-  banned: boolean;
+  version: number;
+  name:string;
 }
 interface CategoryJSON{
   _entityName: string;
@@ -88,19 +91,24 @@ class PrevCardStore extends React.Component<{}, { cards: Array<PublicationJSON> 
   render() 
   {
     var somebs: Array<PublicationJSON> = this.state.cards;
-    var anotherbs: Array<PreviewCard> = new Array<PreviewCard>();
-    var existingcards = <div></div>;    
+    var anotherbs: Array<PreviewCard> = new Array<PreviewCard>();    
     if(somebs.length != 0)
     {
-      somebs.forEach(function (a) {
+      somebs.forEach(function (a) {          
           anotherbs.push(
             {
-              title: a.id,
-              author: a.id,
-              date: a.id,
-              avatarSrc: "https://steamuserimages-a.akamaihd.net/ugc/872998386575050985/84BC2665965A3FF9F2E478C10A000B8DCFED22C6/",
-              content: 'awefasdfawefg'
-            })
+              title: a.title,
+              author: a.author.visibleName,
+              date: new Intl.DateTimeFormat("en-GB", {
+                year: "numeric",
+                month: "long",
+                day: "2-digit",
+                hour: "2-digit",
+                minute: "2-digit"
+              }).format(new Date(a.releaseDate)),
+              avatarSrc: a.author.user.avatarUrl,
+              content: a.content
+            });
         } 
       );      
     }
@@ -108,10 +116,7 @@ class PrevCardStore extends React.Component<{}, { cards: Array<PublicationJSON> 
     return (
       <div>
         <React.Fragment>           
-          {anotherbs.map (a => (<PrevCard card ={a} />) )}
-          <PrevCard card ={test[0]} />    
-          <PrevCard card ={test[1]} />
-          <PrevCard card ={test[2]} />            
+          {anotherbs.map (a => (<PrevCard card ={a} />) )}                 
         </React.Fragment>
         <br />
         <br />

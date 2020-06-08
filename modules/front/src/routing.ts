@@ -22,10 +22,10 @@ const userSettingsSubMenu = {
 menuItems.push(userSettingsSubMenu);
 */
 
-menuItems.push({
+/*menuItems.push({
   pathPattern: "/authorProfile",
   menuLink: "/authorProfile",
   component: AuthorProfile,
   caption: "AuthorProfile"
   //PoboroznyukPavel: this is probably only for testing the AuthorProfile layout
-});
+});*/

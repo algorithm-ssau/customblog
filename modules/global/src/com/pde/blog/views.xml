@@ -79,25 +79,18 @@
     </view>
     <view class="com.pde.blog.entity.Publication" name="publication-rest-preview" extends="_minimal">
         <property name="author" view="_local">
-            <property name="user">
-                <property name="avatarUrl"/>
-                <property name="banned"/>
-            </property>
+            <property name="user" view="user-rest-full"/>
         </property>
         <property name="category" view="_local"/>
         <property name="tags" view="_local"/>
         <property name="rating"/>
         <property name="rates" view="_minimal"/>
+        <property name="content"/>
+        <property name="releaseDate"/>
     </view>
     <view class="com.pde.blog.entity.Publication" name="publication-rest-full" extends="_local">
         <property name="author" view="author-rest-full">
-            <property name="user" view="_minimal">
-                <property name="avatarUrl"/>
-                <property name="banned"/>
-                <property name="name"/>
-                <property name="firstName"/>
-                <property name="lastName"/>
-            </property>
+            <property name="user" view="user-rest-full"/>
         </property>
         <property name="category" view="_local"/>
         <property name="tags" view="_local"/>
@@ -105,5 +98,15 @@
         <property name="rates" view="_local">
             <property name="author" view="_minimal"/>
         </property>
+    </view>
+    <view class="com.pde.blog.entity.ExtUser" name="user-rest-full" extends="_minimal">
+        <property name="name"/>
+        <property name="avatarUrl"/>
+        <property name="firstName"/>
+        <property name="middleName"/>
+        <property name="lastName"/>
+        <property name="language"/>
+        <property name="id"/>
+        <property name="banned"/>
     </view>
 </views>
