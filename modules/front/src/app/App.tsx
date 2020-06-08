@@ -68,7 +68,7 @@ class AppComponent extends React.Component<
               )}
             </Menu>
           </Layout.Sider>
-          <Layout style={{ padding: "16px 16px 16px", background: "#f2f2f2"}}>
+          <Layout style={{ padding: "16px 16px 16px", background: "#f2f2f2", overflowY: "scroll"}}>
             <Layout.Content >
 
               <PrevCardStore/>
