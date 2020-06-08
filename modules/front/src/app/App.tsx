@@ -33,6 +33,21 @@ class AppComponent extends React.Component<
     const mainStore = this.props.mainStore!;
     const { initialized, locale, loginRequired } = mainStore;
 
+    const unused = 
+    <div>
+      <Switch>
+                <Route exact={true} path="/" component={HomePage} />
+                {collectRouteItems(menuItems).map(route => (
+                  <Route
+                    key={route.pathPattern}
+                    path={route.pathPattern}
+                    component={route.component}
+                  />
+                ))}
+              </Switch>
+
+    </div>
+
     if (!initialized || !locale) {
       return <CenteredLoader />;
     }
@@ -68,22 +83,11 @@ class AppComponent extends React.Component<
               )}
             </Menu>
           </Layout.Sider>
-          <Layout style={{ padding: "16px 16px 16px", background: "#f2f2f2"}}>
+          <Layout style={{ padding: "16px 16px 16px", background: "#f2f2f2", overflowY: "scroll"}}>
             <Layout.Content >
-
+              
               <PrevCardStore/>
 
-              <Switch>
-                <Route exact={true} path="/" component={HomePage} />
-                {collectRouteItems(menuItems).map(route => (
-                  <Route
-                    key={route.pathPattern}
-                    path={route.pathPattern}
-                    component={route.component}
-                  />
-                ))}
-              </Switch>
-              
             </Layout.Content>
           </Layout>
         </Layout>

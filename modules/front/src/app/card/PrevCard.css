@@ -1,5 +1,7 @@
 .mainDiv {
     width: 100%;
+    border: 2px solid rgb(200,200,200);
+    border-left: 15px solid rgb(200, 200, 200);
     min-height: 120px; 
     background-color: white;
     padding: 10px;
@@ -12,8 +14,15 @@
     font-style: bold;
     color: #202020;
     float: left;
-    vertical-align: top;
+    vertical-align: bottom;
     width: 50%;       
+}
+.cardContent{
+    width: 100%;
+    float: left;
+    vertical-align:bottom;
+    background-color: white;
+    padding: 10px;    
 }
 
 .cardRightSide {
