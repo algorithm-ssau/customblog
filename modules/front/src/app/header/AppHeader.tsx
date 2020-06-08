@@ -26,15 +26,17 @@ class AppHeader extends React.Component<
         </div>
         <div className="user-panel">
           <LanguageSwitcher className="panelelement language-switcher -header" />
-          <span className="panelelement">
-          {(appState.loginRequired) ? "Anonymous" : appState.userName}
+          <span className="panelelement"
+          /*onClick={}*/
+          >
+          {appState.userName /*fix for new anon functionality*/}
           </span>
           <Button
             className="panelelement"
             ghost={true}
             icon="logout"
             style={{ border: 0 }}
-            onClick={(appState.loginRequired)? this.showLoginConfirm : this.showLogoutConfirm}
+            onClick={(appState.userName == "Anonymous")? this.showLoginConfirm : this.showLogoutConfirm} //fix for new anon functionality
           />
         </div>
       </div>
@@ -63,5 +65,14 @@ class AppHeader extends React.Component<
     });
   };
 }
+/*  //тут должна была быть модаль с профилем автора
+showProfileModal = () => {
+    Modal.common({
+      title: 'Профиль автора',
 
+      }
+    });
+  };
+}
+*/
 export default injectIntl(AppHeader);
