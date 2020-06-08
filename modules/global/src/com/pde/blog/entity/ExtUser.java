@@ -16,6 +16,7 @@
 
 package com.pde.blog.entity;
 
+import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.annotation.Extends;
 import com.haulmont.cuba.security.entity.User;
 
@@ -23,10 +24,11 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 
 @Entity(name = "blog_ExtUser")
+@NamePattern("#getCaption|login,name")
 @Extends(User.class)
 public class ExtUser extends User {
 
-    private static final long serialVersionUID = -5371509754789875772L;
+    private static final long serialVersionUID = -3768455987057785268L;
 
     @Column(name = "AVATAR_URL", length = 1024)
     private String avatarUrl;
