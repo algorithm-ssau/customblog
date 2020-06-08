@@ -86,6 +86,7 @@
         <property name="rating"/>
         <property name="rates" view="_minimal"/>
         <property name="content"/>
+        <property name="releaseDate"/>
     </view>
     <view class="com.pde.blog.entity.Publication" name="publication-rest-full" extends="_local">
         <property name="author" view="author-rest-full">
