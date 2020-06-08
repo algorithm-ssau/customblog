@@ -1,5 +1,4 @@
 # CustomBlog
-Reliable and pretty CMS for create your own blog
 
 Для установки требуется Java 8-11
 Используется Tomcat, а в качестве обратного прокси-сервера рекомендуем использовать nginx
