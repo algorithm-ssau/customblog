@@ -113,6 +113,8 @@ class PrevCardStore extends React.Component<{}, { cards: Array<PublicationJSON> 
       );      
     }
 
+    anotherbs.sort((a:PreviewCard,b:PreviewCard) => new Date(b.date).getTime() - new Date(a.date).getTime())
+
     return (
       <div>
         <React.Fragment>           
